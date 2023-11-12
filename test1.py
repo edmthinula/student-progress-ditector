@@ -73,12 +73,14 @@ def progression_outcomes():
         elif pass_value == 100:
             print("Progress (module trailer)")
             trailer += 1
-        elif 40 <= pass_value <= 80:
-            if defer_value == 0 : 
+        elif 60 <= pass_value <= 80:
+            print("Do not Progress - module retriever")
+        elif pass_value == 40:
+            if defer_value == 0:
                 print("Exclude")
                 excluded += 1
             else:
-                print("Do not Progress - module retriever")
+                print("Do not progress - module retriever")
                 retriever += 1
         elif pass_value == 20:
             if defer_value <= 20:
@@ -92,7 +94,7 @@ def progression_outcomes():
                 print("Exclude")
                 excluded += 1
             else:
-                print("Do not progress – module retriever")
+                print("Do not progress - module retriever")
                 retriever += 1
         return progress,trailer,retriever,excluded
     
