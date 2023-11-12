@@ -61,45 +61,47 @@ def validate_user_input():
 
     return pass_value,defer_value,fail_value
 
-def progression_outcomes():
-    global progress
-    progress = 0
-    global trailer
-    trailer = 0 
-    global retriever
-    retriever = 0
-    global excluded
-    excluded = 0
-    if pass_value == 120:
-        progress += 1
-        print("Progress")
-    elif pass_value == 100:
-        print("Progress (module trailer)")
-        trailer += 1
-    elif 40 <= pass_value <= 80:
-        if defer_value == 0 : 
-            print("Exclude")
-            excluded += 1
-        else:
-            print("Do not Progress - module retriever")
-            retriever += 1
-    elif pass_value == 20:
-        if defer_value <= 20:
-            print("Exclude")
-            excluded += 1
-        else:
-            print("Do not progress - module retriever")
-            retriever += 1
-    else :
-        if defer_value <= 40:
-            print("Exclude")
-            excluded += 1
-        else:
-            print("Do not progress – module retriever")
-            retriever += 1
 
-            
+def progression_outcomes():
+        global progress
+        global trailer
+        global retriever
+        global excluded
+        if pass_value == 120:
+            progress += 1
+            print("Progress")
+        elif pass_value == 100:
+            print("Progress (module trailer)")
+            trailer += 1
+        elif 40 <= pass_value <= 80:
+            if defer_value == 0 : 
+                print("Exclude")
+                excluded += 1
+            else:
+                print("Do not Progress - module retriever")
+                retriever += 1
+        elif pass_value == 20:
+            if defer_value <= 20:
+                print("Exclude")
+                excluded += 1
+            else:
+                print("Do not progress - module retriever")
+                retriever += 1
+        else :
+            if defer_value <= 40:
+                print("Exclude")
+                excluded += 1
+            else:
+                print("Do not progress – module retriever")
+                retriever += 1
+        return progress,trailer,retriever,excluded
+    
+
 #programe starting
+progress = 0
+trailer = 0 
+retriever = 0
+excluded = 0
 while true:  
     #calling user defined functions       
     validate_user_input()
