@@ -67,22 +67,21 @@ def validate_user_input():
     return pass_value,defer_value,fail_value
 
 def progression_outcomes():
-    # if pass_value:
-    pass
-
-
-
-
-
-
+    if pass_value == 120:
+        print("Progress")
+    elif pass_value == 100:
+        print("Progress (module trailer)")
+    else :
+        if defer_value <= 40 :
+            print("Exclude")
+        else:
+            print("Do not progress - module retriever")
 
 #programe starting
 while true:  
     #calling user defined functions       
     validate_user_input()
-    print(pass_value)
-    print(defer_value)
-    print(fail_value)
+    progression_outcomes()
 
     print("Would you like to enter another set of data?")
 
