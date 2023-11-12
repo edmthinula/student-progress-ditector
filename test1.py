@@ -1,0 +1,97 @@
+# Variabel to use as rule to while loop
+true = True
+
+
+
+# defining funtion for validate user input
+def validate_user_input():
+    while true:
+
+        # making varibale as global varibales
+        global pass_value
+        global defer_value
+        global fail_value
+
+        # creating list to valide user inputs are this list
+        list_for_validate = [0,20,40,60,80,100,120]
+        try :
+                # getting user data
+
+            pass_value = int(input("Please enter your credits at pass : "))
+            
+            # validating is user's data are in range
+
+            if pass_value in list_for_validate:
+                pass
+            else:
+                print("Out of range.")
+                continue
+            
+            defer_value = int(input("Please enter your credit at defer : "))
+
+            if defer_value in list_for_validate:
+                pass
+            else:
+                print("Out of range.")
+                continue
+            
+            fail_value = int(input("Please enter your credit at fail : "))
+
+            if fail_value in list_for_validate:
+                pass
+            else:
+                print("Out of range.")
+                continue
+
+        except ValueError :
+            print("Integer required")
+            continue
+        else:
+            # total variable for validate total user input are in range 
+            total = pass_value + defer_value + fail_value
+                
+            # creating list to valide user inputs are this list
+            list_for_validate = [0,20,40,60,80,100,120]
+
+            if total == 120:
+                break
+            else:
+                print("Total incorrect.")
+                continue
+                
+    # print(total)
+    # print(pass_value)
+    # print(defer_value)
+    # print(fail_value)
+
+    return pass_value,defer_value,fail_value
+
+def progression_outcomes():
+    # if pass_value:
+    pass
+
+
+
+
+
+
+
+#programe starting
+while true:  
+    #calling user defined functions       
+    validate_user_input()
+    print(pass_value)
+    print(defer_value)
+    print(fail_value)
+
+    print("Would you like to enter another set of data?")
+
+    desition = str(input("Enter 'y' for yes or 'q' to quit and view results : "))
+    if desition.lower() == 'q':
+        print("exiting")
+        true = False
+    else:
+        continue
+else:
+    print("The program should now display a histogram of results using the graphics.py module")
+    
