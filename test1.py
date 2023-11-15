@@ -96,6 +96,16 @@ def progression_outcomes():
             else:
                 print("Do not progress - module retriever")
                 retriever += 1
+
+
+    #if pass == 120:
+    #print ("progress")
+    #elif pass == 100 :
+    #print("trailer")
+    #elif 0 <= fail <=60:
+    #print("retraiver")
+    #else:
+    #print("exclude")
         return progress,trailer,retriever,excluded
     
 
