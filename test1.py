@@ -103,7 +103,6 @@ def decision_validate():
             
     return decision
 
-
 #programe starting
 progress = 0
 trailer = 0 
