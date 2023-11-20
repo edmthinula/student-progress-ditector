@@ -8,5 +8,4 @@ def circle():
     win.getMouse() # pause for click in window
     win.close()
 
-
 circle()

@@ -13,7 +13,7 @@ def validate_user_input():
         # creating list to valide user inputs are this list
         list_for_validate = [0,20,40,60,80,100,120]
         try :
-                # getting user data
+            # getting user data
 
             pass_value = int(input("Please enter your credits at pass : "))
             
@@ -61,53 +61,48 @@ def validate_user_input():
 
     return pass_value,defer_value,fail_value
 
-
+# to predict progression outcomes
 def progression_outcomes():
+        
+         # making varibale as global varibales
         global progress
         global trailer
         global retriever
         global excluded
+
         if pass_value == 120:
-            progress += 1
             print("Progress")
+
+            progress += 1
+
         elif pass_value == 100:
             print("Progress (module trailer)")
+
             trailer += 1
-        elif 60 <= pass_value <= 80:
-            print("Do not Progress - module retriever")
-        elif pass_value == 40:
-            if defer_value == 0:
-                print("Exclude")
-                excluded += 1
-            else:
-                print("Do not progress - module retriever")
-                retriever += 1
-        elif pass_value == 20:
-            if defer_value <= 20:
-                print("Exclude")
-                excluded += 1
-            else:
-                print("Do not progress - module retriever")
-                retriever += 1
-        else :
-            if defer_value <= 40:
-                print("Exclude")
-                excluded += 1
-            else:
-                print("Do not progress - module retriever")
-                retriever += 1
 
+        elif fail_value <= 60:
+            print("Do not progress – module retriever")
 
-    #if pass == 120:
-    #print ("progress")
-    #elif pass == 100 :
-    #print("trailer")
-    #elif 0 <= fail <=60:
-    #print("retraiver")
-    #else:
-    #print("exclude")
-        return progress,trailer,retriever,excluded
-    
+            retriever += 1
+
+        else:
+            print("Exclude")
+
+            excluded += 1
+
+#decision validating
+def decision_validate():
+    true = True
+    global decision
+    while true:
+        decision = str(input("Enter 'y' for yes or 'q' to quit and view results : "))
+        if decision.lower() == "q" or decision.lower() == "y":
+            true = False
+        else:
+            print("Enter valide input")
+            
+    return decision
+
 
 #programe starting
 progress = 0
@@ -120,9 +115,8 @@ while true:
     progression_outcomes()
 
     print("Would you like to enter another set of data?")
-
-    desition = str(input("Enter 'y' for yes or 'q' to quit and view results : "))
-    if desition.lower() == 'q':
+    decision_validate()
+    if decision.lower() == 'q':
         print("exiting")
         true = False
     else:
