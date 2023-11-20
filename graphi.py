@@ -12,18 +12,18 @@ from graphics import *
 
 def progress():
     win = GraphWin ("thinula",1000,600)
-    rec = Rectangle(Point(100,200), Point(200,300))
-    rec2 = Rectangle(Point(250,100),Point(350,300))
-    rec3 = Rectangle(Point(400,100),Point(500,300))
-    rec4 = Rectangle(Point(550,100),Point(650,300))
+    rec = Rectangle(Point(100,200), Point(200,400))
+    rec2 = Rectangle(Point(250,100),Point(350,400))
+    rec3 = Rectangle(Point(400,100),Point(500,400))
+    rec4 = Rectangle(Point(550,100),Point(650,400))
     #                      x ,y           x,y
-    aline = Line(Point(100,300),Point(800,300))
+    aline = Line(Point(100,400),Point(800,400))
 
     msg  = Text(Point(150,50),"histrogram Result")
-    pro_msg = Text(Point(150,330),"Progress")
-    tra_msg = Text(Point(300,330),"Trailer")
-    ret_msg = Text(Point(450,330),"Retriver")
-    exc_msg = Text(Point(600,330),"Exclude")
+    pro_msg = Text(Point(150,430),"Progress")
+    tra_msg = Text(Point(300,430),"Trailer")
+    ret_msg = Text(Point(450,430),"Retriver")
+    exc_msg = Text(Point(600,430),"Exclude")
 
     rec.setFill("red")
     rec2.setFill("green")
@@ -37,7 +37,7 @@ def progress():
     rec2.draw(win)
     rec3.draw(win)
     rec4.draw(win)
-    
+
     aline.draw(win)
     msg.draw(win)
     pro_msg.draw(win)
