@@ -1,6 +1,7 @@
 num1 = 0
 pro_tuple = ()
 pro_list = []
+pro_lis2 = []
 while num1 < 40:
         num1 = int(input("num1 : "))
         num2 = int(input("num2 : "))
@@ -8,7 +9,7 @@ while num1 < 40:
         pro_tuple = (num1,num2,num3)
         pro_list.append(pro_tuple)
 
-for i in pro_list:
+for i in pro_lis2:
         print(i[0],i[1],i[2])
 
 

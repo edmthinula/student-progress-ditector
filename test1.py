@@ -113,40 +113,26 @@ def decision_validate():
 
 #iterating list and print lists' element
 def list_iterate():
-    if len(progress_list) != 0:
+    for i in progress_list:
+        print(f"progress : {i[0]},{i[1]},{i[2]}")
+    for i in trailer_list :
+        print(f"Progress (module trailer) : {i[0]},{i[1]},{i[2]}")
+    for i in retriever_list:
+        print(f"Module retriever : {i[0]},{i[1]},{i[2]}")
+    for i in excluded_list:
+        print(f"Excluder : {i[0]},{i[1]},{i[2]}")
+
+#writing data to text file 
+def writing_file():
+    with open('part3.txt','a') as file:
         for i in progress_list:
-            print("progress : ",end="")
-            for a in i :
-                print(f",{a}",end="")
-        print("")
-    else:
-        pass
-        
-    if len(trailer_list) != 0:
+         file.write(f"progress : {i[0]},{i[1]},{i[2]}\n")
         for i in trailer_list :
-            print ("Progress (module trailer) : ",end="")
-            for a in i :
-                print(f",{a}",end="")
-        print("")
-    else:
-        pass
-    if len(retriever_list) != 0 :
+            file.write(f"Progress (module trailer) : {i[0]},{i[1]},{i[2]}\n")
         for i in retriever_list:
-            print("Module retriever : ",end="")
-            for a in i :
-                print(f",{a}",end="")
-        print("")
-        
-    else:
-        pass
-    if len(excluded_list) != 0:
+            file.write(f"Module retriever : {i[0]},{i[1]},{i[2]}\n")
         for i in excluded_list:
-            print("Exclude : ",end="")
-            for a in i :
-                print(f",{a}",end="")
-        print("")
-    else:
-        pass
+           file.write(f"Excluder : {i[0]},{i[1]},{i[2]}\n")
 
 #programe starting
 progress = 0
@@ -178,5 +164,6 @@ else:
     histogram(progress,trailer,retriever,excluded)
     
 list_iterate()
+writing_file()
     
     
