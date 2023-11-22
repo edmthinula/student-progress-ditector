@@ -74,23 +74,29 @@ def progression_outcomes():
 
         if pass_value == 120:
             print("Progress")
-
+            tuple = (pass_value,defer_value,fail_value)
+            progress_list.append(tuple)
             progress += 1
 
         elif pass_value == 100:
             print("Progress (module trailer)")
-
+            tuple = (pass_value,defer_value,fail_value)
+            trailer_list.append(tuple)
             trailer += 1
 
         elif fail_value <= 60:
             print("Do not progress – module retriever")
-
+            tuple = (pass_value,defer_value,fail_value)
+            retriever_list.append(tuple)
             retriever += 1
 
         else:
             print("Exclude")
-
+            tuple = (pass_value,defer_value,fail_value)
+            excluded_list.append(tuple)
             excluded += 1
+    
+        return progress_list
 
 #decision validating
 def decision_validate():
@@ -105,11 +111,56 @@ def decision_validate():
             
     return decision
 
+#iterating list and print lists' element
+def list_iterate():
+    if len(progress_list) != 0:
+        for i in progress_list:
+            print("progress : ",end="")
+            for a in i :
+                print(f",{a}",end="")
+        print("")
+    else:
+        pass
+        
+    if len(trailer_list) != 0:
+        for i in trailer_list :
+            print ("Progress (module trailer) : ",end="")
+            for a in i :
+                print(f",{a}",end="")
+        print("")
+    else:
+        pass
+    if len(retriever_list) != 0 :
+        for i in retriever_list:
+            print("Module retriever : ",end="")
+            for a in i :
+                print(f",{a}",end="")
+        print("")
+        
+    else:
+        pass
+    if len(excluded_list) != 0:
+        for i in excluded_list:
+            print("Exclude : ",end="")
+            for a in i :
+                print(f",{a}",end="")
+        print("")
+    else:
+        pass
+
 #programe starting
 progress = 0
 trailer = 0 
 retriever = 0
 excluded = 0
+
+#list for progression outcomes
+progress_list = []
+trailer_list = []
+retriever_list = []
+excluded_list = []
+
+
 while true:  
     #calling user defined functions       
     validate_user_input()
@@ -124,7 +175,8 @@ while true:
         continue
 else:
     print("The program should now display a histogram of results using the graphics.py module")
-    list = [progress,trailer,retriever,excluded]
-    print(list)
     histogram(progress,trailer,retriever,excluded)
+    
+list_iterate()
+    
     

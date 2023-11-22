@@ -4,9 +4,7 @@ def histogram(num1,num2,num3,num4):
 
     win = GraphWin ("thinula",1000,650)
 
-
     large = max(num1,num2,num3,num4)
-    print(large)
 
     pixel = 400
 
@@ -55,7 +53,6 @@ def histogram(num1,num2,num3,num4):
     aline.setWidth(3)
     aline.draw(win)
 
-
     #Text
     top_text  = Text(Point(150,50),"histrogram Result")
     text_bottom = Text(Point(170,590),f"outcomes in total {total_outcome}")
@@ -98,10 +95,3 @@ def histogram(num1,num2,num3,num4):
     #closing graphic window
     win.getMouse()
     win.close()
-
-
-# num1 = int(input("num1 : "))
-# num2 = int(input("num2 : "))
-# num3 = int(input("num3 : "))
-# num4 = int(input("num4 : "))
-# progress(num1,num2,num3,num4)

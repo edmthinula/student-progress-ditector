@@ -1,25 +1,16 @@
+num1 = 0
+pro_tuple = ()
+pro_list = []
+while num1 < 40:
+        num1 = int(input("num1 : "))
+        num2 = int(input("num2 : "))
+        num3 = int(input("num3 : "))
+        pro_tuple = (num1,num2,num3)
+        pro_list.append(pro_tuple)
 
-import matplotlib.pyplot as plt 
-  
-# x-coordinates of left sides of bars  
-left = [1, 2, 3, 4] 
-  
-# heights of bars 
-height = [10, 24, 36, 40] 
-  
-# labels for bars 
-tick_label = ['Progress', 'Trailer', 'Retriver', 'Excluded'] 
-  
-# plotting a bar chart 
-plt.bar(left, height, tick_label = tick_label, 
-        width = 0.8, color = ['red', 'green','blue','orange']) 
-  
-# naming the x-axis 
-# plt.xlabel('x - axis') 
-# # naming the y-axis 
-# plt.ylabel('y - axis') 
-# plot title 
-plt.title('Histogram results') 
-  
-# function to show the plot 
-plt.show() 
+for i in pro_list:
+        print(i[0],i[1],i[2])
+
+
+# print(pro_tuple[0])
+# print(pro_list)
