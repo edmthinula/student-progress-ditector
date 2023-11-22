@@ -1,3 +1,5 @@
+from graphi import *
+
 # Variabel to use as rule to while loop
 true = True
 
@@ -124,4 +126,5 @@ else:
     print("The program should now display a histogram of results using the graphics.py module")
     list = [progress,trailer,retriever,excluded]
     print(list)
+    histogram(progress,trailer,retriever,excluded)
     
