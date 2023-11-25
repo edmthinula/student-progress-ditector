@@ -20,7 +20,7 @@ def validate_user_input():
                 # validating is user's data are in range
 
                 if pass_value in range(0,121,20):
-                    pass
+                    break
                 else:
                     print("Out of range.")
                     continue
@@ -28,7 +28,7 @@ def validate_user_input():
                 defer_value = int(input("Please enter your credit at defer : "))
 
                 if defer_value in range(0,121,20):
-                    pass
+                    break
                 else:
                     print("Out of range.")
                     continue
@@ -36,7 +36,7 @@ def validate_user_input():
                 fail_value = int(input("Please enter your credit at fail : "))
 
                 if fail_value in range(0,121,20):
-                    pass
+                    break
                 else:
                     print("Out of range.")
                     continue
