@@ -95,3 +95,17 @@ def histogram(num1,num2,num3,num4):
     #closing graphic window
     win.getMouse()
     win.close()
+
+
+num1 = 20
+num2 = 30
+num3 = 40
+num4 = 50
+
+try:
+    histogram(num1,num2,num3,num4)
+except GraphicsError:
+    print("fkguhsfadglkjadfngaf")
+
+
+print("ytfytdfyfjutfjytfuyf")

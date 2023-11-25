@@ -12,36 +12,34 @@ def validate_user_input():
         global defer_value
         global fail_value
 
-        # creating list to valide user inputs are this list
-        list_for_validate = [0,20,40,60,80,100,120]
         try :
             # getting user data
+            while true:
+                pass_value = int(input("Please enter your credits at pass : "))
+                
+                # validating is user's data are in range
 
-            pass_value = int(input("Please enter your credits at pass : "))
-            
-            # validating is user's data are in range
+                if pass_value in range(0,121,20):
+                    pass
+                else:
+                    print("Out of range.")
+                    continue
+            while true:
+                defer_value = int(input("Please enter your credit at defer : "))
 
-            if pass_value in list_for_validate:
-                pass
-            else:
-                print("Out of range.")
-                continue
-            
-            defer_value = int(input("Please enter your credit at defer : "))
+                if defer_value in range(0,121,20):
+                    pass
+                else:
+                    print("Out of range.")
+                    continue
+            while true:
+                fail_value = int(input("Please enter your credit at fail : "))
 
-            if defer_value in list_for_validate:
-                pass
-            else:
-                print("Out of range.")
-                continue
-            
-            fail_value = int(input("Please enter your credit at fail : "))
-
-            if fail_value in list_for_validate:
-                pass
-            else:
-                print("Out of range.")
-                continue
+                if fail_value in range(0,121,20):
+                    pass
+                else:
+                    print("Out of range.")
+                    continue
 
         except ValueError :
             print("Integer required")
@@ -156,8 +154,13 @@ while true:
         continue
 else:
     print("The program should now display a histogram of results using the graphics.py module")
-    histogram(progress,trailer,retriever,excluded)
-    
+    try:
+        histogram(progress,trailer,retriever,excluded)
+    except GraphicsError:
+        print("graphic window closing")
+    else:
+        print("graphic window closing")
+
 list_iterate()
 writing_file()
     
