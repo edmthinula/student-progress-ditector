@@ -56,17 +56,12 @@ def validate_user_input():
                 print("Total incorrect.")
                 continue
                 
-    # print(total)
-    # print(pass_value)
-    # print(defer_value)
-    # print(fail_value)
-
     return pass_value,defer_value,fail_value
 
-# to predict progression outcomes
+# to predict progression outcomes , creating relavent list and , counting progress
 def progression_outcomes():
         
-         # making varibale as global varibales
+        # making varibale as global varibales
         global progress
         global trailer
         global retriever
