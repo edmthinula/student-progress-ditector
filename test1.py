@@ -1,4 +1,4 @@
-from graphi import *
+from histrogram import *
 
 # Variabel to use as rule to while loop
 true = True
@@ -41,9 +41,12 @@ def validate_user_input():
                     print("Out of range.")
                     continue
 
-        except ValueError :
+        except ValueError:
             print("Integer required")
             continue
+        # except KeyboardInterrupt:
+        #     print("Integer required")
+        #     break
         else:
             # total variable for validate total user input are in range 
             total = pass_value + defer_value + fail_value
@@ -146,6 +149,7 @@ while true:
     progression_outcomes()
 
     print("Would you like to enter another set of data?")
+
     decision_validate()
     if decision.lower() == 'q':
         print("exiting")
