@@ -97,7 +97,7 @@ def histogram(num1,num2,num3,num4):
     win.close()
 
 
-# num1 = 0
+# num1 = 10
 # num2 = 30
 # num3 = 50
 # num4 = 100

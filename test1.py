@@ -12,19 +12,23 @@ def validate_user_input():
         global defer_value
         global fail_value
 
-        try :
             # getting user data
-            while true:
-                pass_value = int(input("Please enter your credits at pass : "))
-                
-                # validating is user's data are in range
+        while true:
+            try:
+                    pass_value = int(input("Please enter your credits at pass : "))
+                    
+                    # validating is user's data are in range
 
-                if pass_value in range(0,121,20):
-                    break
-                else:
-                    print("Out of range.")
+                    if pass_value in range(0,121,20):
+                        break
+                    else:
+                        print("Out of range.")
+                        continue
+            except ValueError:
+                    print("Integer required")
                     continue
-            while true:
+        while true:
+            try:
                 defer_value = int(input("Please enter your credit at defer : "))
 
                 if defer_value in range(0,121,20):
@@ -32,7 +36,11 @@ def validate_user_input():
                 else:
                     print("Out of range.")
                     continue
-            while true:
+            except ValueError:
+                    print("Integer required")
+                    continue
+        while true:
+            try:
                 fail_value = int(input("Please enter your credit at fail : "))
 
                 if fail_value in range(0,121,20):
@@ -40,22 +48,18 @@ def validate_user_input():
                 else:
                     print("Out of range.")
                     continue
-
-        except ValueError:
-            print("Integer required")
-            continue
-        # except KeyboardInterrupt:
-        #     print("Integer required")
-        #     break
-        else:
-            # total variable for validate total user input are in range 
-            total = pass_value + defer_value + fail_value
-            
-            if total == 120:
-                break
-            else:
-                print("Total incorrect.")
+            except ValueError:
+                print("Integer required")
                 continue
+
+# total variable for validate total user input are in range 
+        total = pass_value + defer_value + fail_value
+                                        
+        if total == 120:
+            break
+        else:
+            print("Total incorrect.")
+            continue
                 
     return pass_value,defer_value,fail_value
 
