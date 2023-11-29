@@ -134,7 +134,6 @@ def writing_file():
         for i in excluded_list:
            file.write(f"Excluder : {i[0]},{i[1]},{i[2]}\n")
 
-#programe starting
 progress = 0
 trailer = 0 
 retriever = 0
@@ -146,19 +145,29 @@ trailer_list = []
 retriever_list = []
 excluded_list = []
 
+#programe starting
 
 while true:  
-    #calling user defined functions       
-    validate_user_input()
-    progression_outcomes()
+    print("Enter 'y' for student or 'q' to teacher and view results : ")
+    choice = input("Enter your choice : ")
+    if choice.lower() == "y":
+        validate_user_input()
+        progression_outcomes()
+        break
+    elif choice.lower() == "q":      
+        validate_user_input()
+        progression_outcomes()
 
-    print("Would you like to enter another set of data?")
+        print("Would you like to enter another set of data?")
 
-    decision_validate()
-    if decision.lower() == 'q':
-        print("exiting")
-        true = False
+        decision_validate()
+        if decision.lower() == 'q':
+            print("exiting")
+            true = False
+        else:
+            continue
     else:
+        print("Invalid input")
         continue
 else:
     print("The program should now display a histogram of results using the graphics.py module")
@@ -168,8 +177,7 @@ else:
         print("graphic window closing")
     else:
         print("graphic window closing")
-
-list_iterate()
-writing_file()
+    list_iterate()
+    writing_file()
     
     
