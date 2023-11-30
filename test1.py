@@ -154,18 +154,19 @@ while true:
         validate_user_input()
         progression_outcomes()
         break
-    elif choice.lower() == "q":      
-        validate_user_input()
-        progression_outcomes()
+    elif choice.lower() == "q": 
+        while true:     
+            validate_user_input()
+            progression_outcomes()
 
-        print("Would you like to enter another set of data?")
+            print("Would you like to enter another set of data?")
 
-        decision_validate()
-        if decision.lower() == 'q':
-            print("exiting")
-            true = False
-        else:
-            continue
+            decision_validate()
+            if decision.lower() == 'q':
+                print("exiting")
+                true = False
+            else:
+                continue
     else:
         print("Invalid input")
         continue
