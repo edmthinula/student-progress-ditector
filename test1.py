@@ -5,32 +5,27 @@ true = True
 
 # defining funtion for validate user input
 def validate_user_input():
+    # making varibale as global varibales
+    global pass_value
+    global defer_value
+    global fail_value
     while true:
-
-        # making varibale as global varibales
-        global pass_value
-        global defer_value
-        global fail_value
-
-            # getting user data
+        # getting user data
         while true:
             try:
-                    pass_value = int(input("Please enter your credits at pass : "))
-                    
-                    # validating is user's data are in range
-
-                    if pass_value in range(0,121,20):
-                        break
-                    else:
-                        print("Out of range.")
-                        continue
+                pass_value = int(input("Please enter your credits at pass : "))            
+                # validating is user's data are in range
+                if pass_value in range(0,121,20):
+                    break
+                else:
+                    print("Out of range.")
+                    continue
             except ValueError:
                     print("Integer required")
                     continue
         while true:
             try:
                 defer_value = int(input("Please enter your credit at defer : "))
-
                 if defer_value in range(0,121,20):
                     break
                 else:
@@ -42,7 +37,6 @@ def validate_user_input():
         while true:
             try:
                 fail_value = int(input("Please enter your credit at fail : "))
-
                 if fail_value in range(0,121,20):
                     break
                 else:
@@ -52,10 +46,8 @@ def validate_user_input():
                 print("Integer required")
                 continue
 
-# total variable for validate total user input are in range 
-        total = pass_value + defer_value + fail_value
-                                        
-        if total == 120:
+#validate total user input are in range 
+        if pass_value + defer_value + fail_value == 120:
             break
         else:
             print("Total incorrect.")
@@ -66,46 +58,45 @@ def validate_user_input():
 # to predict progression outcomes , creating relavent list and , counting progress
 def progression_outcomes():
         
-        # making varibale as global varibales
-        global progress
-        global trailer
-        global retriever
-        global excluded
+    # making varibale as global varibales
+    global progress
+    global trailer
+    global retriever
+    global excluded
 
-        if pass_value == 120:
-            print("Progress")
-            tuple = (pass_value,defer_value,fail_value)
-            progress_list.append(tuple)
-            progress += 1
+    if pass_value == 120:
+        print("Progress")
+        tuple = (pass_value,defer_value,fail_value)
+        progress_list.append(tuple)
+        progress += 1
 
-        elif pass_value == 100:
-            print("Progress (module trailer)")
-            tuple = (pass_value,defer_value,fail_value)
-            trailer_list.append(tuple)
-            trailer += 1
+    elif pass_value == 100:
+        print("Progress (module trailer)")
+        tuple = (pass_value,defer_value,fail_value)
+        trailer_list.append(tuple)
+        trailer += 1
 
-        elif fail_value <= 60:
-            print("Do not progress – module retriever")
-            tuple = (pass_value,defer_value,fail_value)
-            retriever_list.append(tuple)
-            retriever += 1
+    elif fail_value <= 60:
+        print("Do not progress – module retriever")
+        tuple = (pass_value,defer_value,fail_value)
+        retriever_list.append(tuple)
+        retriever += 1
 
-        else:
-            print("Exclude")
-            tuple = (pass_value,defer_value,fail_value)
-            excluded_list.append(tuple)
-            excluded += 1
+    else:
+        print("Exclude")
+        tuple = (pass_value,defer_value,fail_value)
+        excluded_list.append(tuple)
+        excluded += 1
     
-        return progress_list
+    return progress_list
 
 #decision validating
 def decision_validate():
-    true = True
     global decision
     while true:
         decision = str(input("Enter 'y' for yes or 'q' to quit and view results : "))
         if decision.lower() == "q" or decision.lower() == "y":
-            true = False
+            break
         else:
             print("Enter valide input")
             
