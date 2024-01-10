@@ -1,4 +1,8 @@
-from histrogram import *
+# I declare that my work contains no examples of misconduct, such as plagiarism, orcollusion.
+# Any code taken from other sources is referenced within my code soluton.
+# Student ID:20518815
+# Date: 2023/12/13
+from W2051881_part2 import *
 
 # Variabel to use as rule to while loop
 true = True
